@@ -28,8 +28,8 @@ ResultSet resultSet = null;
 
 </tr>
 <tr bgcolor="">
-<td><b>TransactionId</b></td>
-<td><b>Transaction</b></td>
+<td><b>T_id</b></td>
+<td><b>T_amount</b></td>
 
 </tr>
 
@@ -37,15 +37,15 @@ ResultSet resultSet = null;
 try{ 
 connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM transactions order by TransactionId desc limit 5";
+String sql ="SELECT * FROM transactions order by T_id desc limit 5";
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr bgcolor="#DEB887">
 
-<td><%=resultSet.getString("TransactionId") %></td>
-<td><%=resultSet.getString("Transaction") %></td>
+<td><%=resultSet.getString("T_id") %></td>
+<td><%=resultSet.getString("T_amount") %></td>
 
 </tr>
 
